@@ -1,4 +1,4 @@
-export default function EditProfile() {
+export default function EditProfile( { name, profession }) {
   return (
    <form className="popup__form popup__form-edit" 
 name="card-form"
@@ -8,8 +8,9 @@ name="card-form"
               <label className="popup__label">
                 <input
                   name="name"
+                  defaultValue={name}
                   type="text"
-                  className="popup__input popup__input_name popup__input_type_error"
+                  className="popup__input popup__input_name "
                   placeholder="Name"
                   minLength="2"
                   maxLength="40"
@@ -23,8 +24,9 @@ name="card-form"
               <label className="popup__label">
                 <input
                   name="job"
+                  defaultValue={profession}
                   type="text"
-                  className="popup__input popup__input_profession popup__input_type_error"
+                  className="popup__input popup__input_profession "
                   placeholder="Profession"
                   minLength="2"
                   maxLength="200"

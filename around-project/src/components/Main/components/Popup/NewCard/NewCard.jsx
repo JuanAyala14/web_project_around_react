@@ -7,7 +7,7 @@ export default function NewCard() {
                 <input
                   name="title"
                   type="text"
-                  className="popup__input popup__input_title popup__input_type_error"
+                  className="popup__input popup__input_title "
                   placeholder="Title"
                   minLength="2"
                   maxLength="30"
@@ -22,7 +22,7 @@ export default function NewCard() {
                 <input
                   name="Image-url"
                   type="url"
-                  className="popup__input popup__input_url popup__input_type_error"
+                  className="popup__input popup__input_url "
                   placeholder="Image URL"
                   id="url-input"
                   required

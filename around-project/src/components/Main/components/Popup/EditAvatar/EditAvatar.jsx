@@ -1,4 +1,4 @@
-export default function EditProfile() {
+export default function EditAvatar() {
   return (
     <form className="popup__form popup__form-avatar" name="avatar-form" id="avatar-form" noValidate>
             <fieldset className="popup__content">
@@ -6,7 +6,7 @@ export default function EditProfile() {
                 <input
                   name="avatar"
                   type="url"
-                  className="popup__input popup__input_avatar popup__input_type_error"
+                  className="popup__input popup__input_avatar "
                   placeholder="Image URL"
                   id="avatar-input"
                   required

@@ -25,14 +25,17 @@ const cards = [
   },
 ];
 
-console.log(cards);
+
 
 export default function Main() {
   const [popup, setPopup] = useState(null);
   const [selectedCard, setSelectedCard] = useState(null);
-  const newCardPopup = { title: "Nuevo lugar", children: <NewCard /> };
-  const newProfilePopup = { title: "Editar perfil", children: <EditProfile /> };
+   const [userName, setUserName] = useState("Max Verstappen");
+const [userProfession, setUserProfession] = useState("Racing Driver"); 
+const newCardPopup = { title: "Nuevo lugar", children: <NewCard /> };
+  const newProfilePopup = { title: "Editar perfil", children: <EditProfile name={userName} profession={userProfession} /> };
   const newAvatarPopup = { title: "Editar avatar", children: <EditAvatar /> };
+ 
   function handleOpenPopup(popup) {
       setPopup(popup);
   }
@@ -55,8 +58,8 @@ export default function Main() {
                     />
                   </button>
                   <div className="gallery__profile-container">
-                    <p className="gallery__profile-name">Max Verstappen</p>
-                    <p className="gallery__profile-profession">Racing Driver</p>
+                    <p className="gallery__profile-name">{userName}</p>
+                    <p className="gallery__profile-profession">{userProfession}</p>
                     <button aria-label="Edit profile" type="button" className="gallery__button gallery__button-edit" onClick={() => handleOpenPopup(newProfilePopup)}>
                       🖌
                     </button>
