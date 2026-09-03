@@ -1,16 +1,80 @@
-# React + Vite
+# Around The U.S.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web tipo galería de fotos donde el usuario puede gestionar su perfil (nombre, profesión y avatar) y una colección de lugares/tarjetas, cada una con imagen, nombre, botón de "like" y opción de eliminar. Construida como proyecto de práctica de React, migrando una versión previa del proyecto hecha en HTML/CSS/JS puro a componentes de React.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Editar el nombre y la profesión del perfil.
+- Editar el avatar del perfil.
+- Agregar nuevas tarjetas (lugar + imagen).
+- Ver una vista ampliada de la imagen de cada tarjeta en un popup.
+- Dar "like" a una tarjeta y eliminarla.
+- Todas las acciones anteriores se manejan mediante ventanas emergentes (popups) reutilizables.
 
-## React Compiler
+## Tecnologías usadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/) — construcción de la interfaz mediante componentes.
+- [Vite](https://vite.dev/) — servidor de desarrollo y bundler.
+- [ESLint](https://eslint.org/) — análisis estático de código.
+- CSS puro (organizado por bloques en `src/blocks`), siguiendo una metodología similar a BEM.
+- JavaScript (ES Modules) / JSX.
 
-## Expanding the ESLint configuration
+## Requisitos previos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Node.js](https://nodejs.org/) (versión 18 o superior recomendada).
+- npm (se instala junto con Node.js).
+
+## Instalación
+
+1. Clona o descarga este repositorio.
+2. Entra a la carpeta del proyecto:
+   ```bash
+   cd around-project
+   ```
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+## Ejecutar en modo desarrollo
+
+```bash
+npm run dev
+```
+
+Esto levanta un servidor local con recarga en caliente (HMR) y abre la aplicación automáticamente en el navegador, normalmente en `http://localhost:3000`.
+
+## Otros comandos disponibles
+
+- **Compilar para producción:**
+  ```bash
+  npm run build
+  ```
+  Genera la versión optimizada del proyecto en la carpeta `dist`.
+
+- **Previsualizar la versión de producción:**
+  ```bash
+  npm run preview
+  ```
+
+- **Revisar el código con ESLint:**
+  ```bash
+  npm run lint
+  ```
+
+## Estructura del proyecto
+
+```
+around-project/
+├── public/              # Archivos estáticos
+├── src/
+│   ├── blocks/           # Estilos CSS organizados por bloque
+│   ├── components/       # Componentes de React (Header, Main, Footer, Card, popups, etc.)
+│   ├── images/            # Imágenes usadas en la interfaz
+│   ├── vendor/            # Fuentes y estilos de terceros
+│   ├── main.jsx           # Punto de entrada de la aplicación
+│   └── index.css          # Estilos globales
+├── index.html
+├── package.json
+└── vite.config.js
+```
